@@ -10,12 +10,15 @@ for file in os.listdir(image_iter):
 	# Set the absolute path of each image, so directory + file name
 	input_path = os.path.join(image_iter, file)
 	# Open the absolute path of each image
-	with open(input_path, 'rb') as image:
-		# Process each image
-		im = Image.open(image)
-		resized = im.resize((128,128))
-		rotated = resized.rotate(270)
-		formatted = rotated.convert("RGB")
-		# Save the processed image to final_path, and join the file
-		# name minus the original extension ".tiff", then add ".jpeg"
-		formatted.save(final_path + file[:-5] + '.jpeg')
+	try:
+		with open(input_path, 'rb') as image:
+			# Process each image
+			im = Image.open(image)
+			resized = im.resize((128,128))
+			rotated = resized.rotate(270)
+			formatted = rotated.convert("RGB")
+			# Save the processed image to final_path, and join the file
+			# name minus the original extension ".tiff", then add ".jpeg"
+			formatted.save(final_path + file[:-5] + '.jpeg')
+	except PIL.UnidentifiedImageError:
+		pass
