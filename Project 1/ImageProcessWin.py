@@ -18,7 +18,12 @@ for file in os.listdir(image_iter):
 			rotated = resized.rotate(270)
 			formatted = rotated.convert("RGB")
 			# Save the processed image to final_path, and join the file
-			# name minus the original extension ".tiff", then add ".jpeg"
-			formatted.save(final_path + file[:-5] + '.jpeg')
+			# as well as set the format to jpeg
+			print(file[-5:])
+			if file[-5:] == ".tiff" or file[-5:] == "jpeg":
+				formatted.save(final_path + file[:-5] + ".jpeg", "JPEG")
+			else:
+				formatted.save(final_path + file[:-4] + ".jpeg", "JPEG")
 	except OSError:
 		pass
+
