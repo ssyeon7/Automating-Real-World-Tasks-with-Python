@@ -20,5 +20,5 @@ for file in os.listdir(image_iter):
 			# Save the processed image to final_path, and join the file
 			# name minus the original extension ".tiff", then add ".jpeg"
 			formatted.save(final_path + file[:-5] + '.jpeg')
-	except PIL.UnidentifiedImageError:
+	except OSError:
 		pass
