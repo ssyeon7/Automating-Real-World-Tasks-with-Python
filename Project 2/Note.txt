@@ -1,0 +1,9 @@
+This lab was weird.
+
+So the windows version is the code I tried to make myself, the output was completely fine and functional, I just had to change some stuff so it worked on the VM of the project.
+
+So I made the Linux version, and ran the script. The response code for some reason was 500, instead of the expected 201, like I said, the output was completely fine. Either way, I scrapped it, and the Linux version I got is some code I got from a solution that was uploaded on the following page:
+
+https://techiestalk.in/automating-real-world-tasks-with-python-week-2-coursera-solution/
+
+I went ahead and tested it and it obviously worked, but the output was exactly the same as my own script, so I really have no idea why I would get a response code of 500 instead of 201. I still included my Windows version just for fun, but I'll forget about it now.
